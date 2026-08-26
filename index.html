@@ -1,349 +1,923 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEZ TAILORING — Style Crafted to Perfection</title>
-<meta name="description" content="NEZ TAILORING is a premium fashion and tailoring house crafting custom outfits, traditional wear and special occasion pieces with precision and elegance.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rebecca & Co. Industries | Criminal Defense Lawyer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --black: #050505;
+            --dark: #111111;
+            --gold: #d4af37;
+            --light-gold: #f5d76e;
+            --white: #ffffff;
+            --gray: #c8c8c8;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.94);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: white;
+            font-size: 13px;
+            display: block;
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 60px;
+            background:
+                linear-gradient(120deg,
+                rgba(0,0,0,0.98) 15%,
+                rgba(20,20,20,0.88) 55%,
+                rgba(212,175,55,0.35)),
+                url("lawyer.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 18px;
+            max-width: 620px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, var(--gold), var(--light-gold));
+            color: black;
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+        }
+
+        .outline-btn {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .outline-btn:hover {
+            background: var(--gold);
+            color: black;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 span {
+            color: var(--gold);
+        }
+
+        .section-title p {
+            color: var(--gray);
+        }
+
+        /* ABOUT */
+        .about {
+            background: linear-gradient(135deg, #080808, #171717, #080808);
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .lawyer-photo {
+            position: relative;
+        }
+
+        .lawyer-photo img {
+            width: 100%;
+            max-height: 620px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 8px;
+            border: 2px solid var(--gold);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        }
+
+        .photo-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.85);
+            border-left: 4px solid var(--gold);
+            padding: 15px;
+        }
+
+        .photo-label h3 {
+            color: var(--gold);
+        }
+
+        .about-text h3 {
+            color: var(--gold);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #ccc;
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 3px solid var(--gold);
+            background: rgba(212,175,55,0.08);
+            color: white;
+            font-style: italic;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #050505;
+        }
+
+        .service-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 32px 25px;
+            background: linear-gradient(145deg, #111, #1c1c1c);
+            border: 1px solid rgba(212,175,55,0.35);
+            border-radius: 8px;
+            transition: 0.35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 35px rgba(212,175,55,0.12);
+        }
+
+        .service-icon {
+            font-size: 38px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #bbb;
+        }
+
+        /* WHY US */
+        .why-us {
+            background: linear-gradient(135deg, #000000, #161616, #241f0d);
+        }
+
+        .why-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .why-item {
+            padding: 25px;
+            border: 1px solid #333;
+            background: rgba(0,0,0,0.45);
+        }
+
+        .why-item h3 {
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            color: #ccc;
+        }
+
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 50px auto 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 25px;
+            border-top: 2px solid var(--gold);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .stat h3 {
+            font-size: 35px;
+            color: var(--gold);
+        }
+
+        .stat p {
+            color: #bbb;
+        }
+
+        /* EXPERIENCE */
+        .experience {
+            background: #090909;
+        }
+
+        .case-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .case {
+            background: #151515;
+            padding: 30px;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .case h3 {
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .case p {
+            color: #bbb;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: linear-gradient(135deg, #000, #1c1c1c, #30260c);
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: var(--gold);
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .contact-card {
+            padding: 18px;
+            margin: 12px 0;
+            border-left: 3px solid var(--gold);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-card strong {
+            color: var(--gold);
+            display: block;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+        }
+
+        form {
+            background: rgba(0,0,0,0.5);
+            padding: 30px;
+            border: 1px solid rgba(212,175,55,0.4);
+            border-radius: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            background: #111;
+            border: 1px solid #444;
+            color: white;
+            outline: none;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--gold);
+        }
+
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 35px 20px;
+            border-top: 1px solid rgba(212,175,55,0.3);
+        }
+
+        footer h2 {
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .disclaimer {
+            max-width: 750px;
+            margin: 15px auto;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 850px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 7% 60px;
+                background-position: center;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid,
+            .case-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .service-grid,
+            .case-grid,
+            .why-grid,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .lawyer-photo img {
+                max-height: 500px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- ============ NAV ============ -->
-<header class="site-header" id="top">
-  <div class="nav-wrap">
-    <a href="#top" class="brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 60 60" width="40" height="40">
-          <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="1.4"/>
-          <text x="30" y="38" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" fill="currentColor">NT</text>
-        </svg>
-      </span>
-      <span class="brand-name">NEZ<em>TAILORING</em></span>
-    </a>
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">
+                REBECCA & CO.
+                <span>INDUSTRIES</span>
+            </div>
 
-    <nav class="main-nav" id="main-nav">
-      <a href="#top">Home</a>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#why-us">Why Us</a>
-      <a href="#contact">Contact</a>
-    </nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?q=80&w=1800&auto=format&fit=crop" alt="Tailor measuring fabric for a custom outfit" loading="eager">
-    <div class="hero-scrim"></div>
-  </div>
-  <div class="hero-content reveal">
-    <p class="eyebrow">Bespoke Fashion House</p>
-    <h1>NEZ TAILORING</h1>
-    <p class="hero-tagline">Style Crafted to Perfection</p>
-    <p class="hero-desc">At NEZ TAILORING, we create premium outfits designed with elegance, precision, and attention to detail. Every outfit is carefully crafted to fit our customers' style and satisfaction.</p>
-    <div class="hero-actions">
-      <a href="#gallery" class="btn btn-primary">Explore Our Gallery</a>
-      <a href="#contact" class="btn btn-outline">Contact Us</a>
-    </div>
-  </div>
-  <div class="stitch-divider" aria-hidden="true"></div>
-</section>
+    <!-- HOME -->
+    <section class="hero" id="home">
 
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="section-inner about-grid">
-    <div class="about-media">
-      <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1400&auto=format&fit=crop" alt="Tailor working carefully on a garment" loading="lazy">
-      <span class="frame-label">A shop that always delivers.</span>
-    </div>
-    <div class="about-copy">
-      <p class="eyebrow">Our Story</p>
-      <h2>About NEZ TAILORING</h2>
-      <p>NEZ TAILORING is a dedicated fashion and tailoring brand focused on creating beautiful, well-fitted and stylish outfits for our customers. We believe that clothing should not only look good but also make you feel confident and comfortable.</p>
-      <p>From the first measurement to the final stitch, we pay attention to every detail to ensure that every outfit meets our high standards.</p>
-      <p class="pull-quote">"A shop that always delivers."</p>
-      <p>We are committed to quality workmanship, beautiful designs, reliable service, and customer satisfaction — in every single outfit that leaves our workshop.</p>
-    </div>
-  </div>
-</section>
+        <div class="hero-content">
 
-<div class="stitch-divider" aria-hidden="true"></div>
+            <div class="small-title">
+                Rebecca & Co. Industries
+            </div>
 
-<!-- ============ GALLERY ============ -->
-<section class="gallery" id="gallery">
-  <div class="section-inner">
-    <p class="eyebrow center">Our Craft</p>
-    <h2 class="center">Gallery</h2>
-    <p class="section-lede center">A glimpse into the designs, fabrics and finishing that define NEZ TAILORING.</p>
+            <h1>
+                Justice.<br>
+                <span>Defended.</span>
+            </h1>
 
-    <div class="gallery-grid">
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=1000&auto=format&fit=crop" alt="Beautiful African fashion outfit" loading="lazy">
-        <figcaption>Elegant Custom Design</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1608234807905-4466023792f5?q=80&w=1000&auto=format&fit=crop" alt="Tailored dress on a model" loading="lazy">
-        <figcaption>Tailored to Perfection</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=1000&auto=format&fit=crop" alt="Traditional outfit detail" loading="lazy">
-        <figcaption>Timeless Tradition</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?q=80&w=1000&auto=format&fit=crop" alt="Colourful Ankara fashion outfit" loading="lazy">
-        <figcaption>Vibrant Ankara Style</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?q=80&w=1000&auto=format&fit=crop" alt="Elegant evening gown" loading="lazy">
-        <figcaption>Elegant Evening Gown</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop" alt="Men's traditional clothing" loading="lazy">
-        <figcaption>Refined Men's Wear</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=1000&auto=format&fit=crop" alt="Close-up of fashion fabric detail" loading="lazy">
-        <figcaption>Detail in Every Layer</figcaption>
-      </figure>
-      <figure class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop" alt="Tailoring and sewing in progress" loading="lazy">
-        <figcaption>Precision at the Machine</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
+            <p>
+                Dedicated criminal defense representation built on
+                preparation, strategy, integrity and an unwavering
+                commitment to protecting our clients' rights.
+            </p>
 
-<div class="stitch-divider" aria-hidden="true"></div>
+            <div class="buttons">
+                <a href="#contact" class="btn gold-btn">
+                    Book A Consultation
+                </a>
 
-<!-- ============ WHY US ============ -->
-<section class="why-us" id="why-us">
-  <div class="section-inner">
-    <p class="eyebrow center">Our Promise</p>
-    <h2 class="center">Why Choose NEZ TAILORING?</h2>
+                <a href="#services" class="btn outline-btn">
+                    Our Services
+                </a>
+            </div>
 
-    <div class="cards-grid">
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 4l5.5 11.2 12.4 1.8-9 8.8 2.1 12.3L24 32.2l-11 5.9 2.1-12.3-9-8.8 12.4-1.8L24 4z"/></svg>
-        </span>
-        <h3>Premium Quality</h3>
-        <p>We provide premium services and carefully crafted outfits made with attention to detail.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 42V16c0-4 4-8 12-8s12 4 12 8v26"/><path d="M12 30h24"/></svg>
-        </span>
-        <h3>Perfect Fit</h3>
-        <p>Our outfits are designed and tailored with our customers' measurements and preferences in mind.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 42s-16-9.4-16-21.5C8 13.6 13 9 19 9c2.7 0 5 1.4 5 1.4S26.3 9 29 9c6 0 11 4.6 11 11.5C40 32.6 24 42 24 42z"/></svg>
-        </span>
-        <h3>Customer Satisfaction</h3>
-        <p>Your satisfaction is important to us. We listen to your needs and work to turn your fashion ideas into beautiful outfits.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="17"/><path d="M24 15v9l6 4"/></svg>
-        </span>
-        <h3>Unique Designs</h3>
-        <p>We create stylish and unique outfits that help our customers express their personality.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="12" width="34" height="26" rx="2"/><path d="M7 18h34"/></svg>
-        </span>
-        <h3>Reliable Service</h3>
-        <p>We value our customers' time and strive to provide dependable service from consultation to final delivery.</p>
-      </div>
-      <div class="why-card">
-        <span class="why-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M34 8L14 28l-4 10 10-4 20-20z"/><path d="M27 15l6 6"/></svg>
-        </span>
-        <h3>Attention to Detail</h3>
-        <p>Every stitch, measurement, fabric choice, and finishing touch is handled with care.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+    </section>
 
-<!-- ============ REASONS TO PATRONIZE ============ -->
-<section class="patronize">
-  <div class="section-inner patronize-grid">
-    <div class="patronize-copy">
-      <p class="eyebrow">The NEZ Difference</p>
-      <h2>Why Patronize NEZ TAILORING?</h2>
-      <p>We've built our name on the things that matter most when you trust someone with your outfit.</p>
-      <p class="statement">Your style. Your fit. Your satisfaction.</p>
-    </div>
-    <ul class="patronize-list">
-      <li>Premium tailoring services</li>
-      <li>Beautiful and modern designs</li>
-      <li>Excellent finishing</li>
-      <li>Customer-focused service</li>
-      <li>Quality materials</li>
-      <li>Proper fitting</li>
-      <li>Attention to detail</li>
-      <li>Reliable delivery</li>
-      <li>Designs made to suit your preference</li>
-      <li>Professional and friendly service</li>
-    </ul>
-  </div>
-</section>
 
-<div class="stitch-divider" aria-hidden="true"></div>
+    <!-- ABOUT -->
+    <section class="about" id="about">
 
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
-  <div class="section-inner">
-    <p class="eyebrow center">What We Offer</p>
-    <h2 class="center">Our Services</h2>
+        <div class="section-title">
+            <h2>About <span>Rebecca</span></h2>
+            <p>Dedicated. Strategic. Determined.</p>
+        </div>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Custom Tailoring</h3>
-        <p>Outfits carefully designed and sewn according to your measurements.</p>
-      </div>
-      <div class="service-card">
-        <h3>Fashion Design</h3>
-        <p>Creative and stylish designs created to match your personality and occasion.</p>
-      </div>
-      <div class="service-card">
-        <h3>Traditional Wear</h3>
-        <p>Beautiful traditional outfits suitable for celebrations, ceremonies and special occasions.</p>
-      </div>
-      <div class="service-card">
-        <h3>Alterations &amp; Fittings</h3>
-        <p>Professional adjustments to help your outfit achieve a comfortable and suitable fit.</p>
-      </div>
-      <div class="service-card">
-        <h3>Special Occasion Outfits</h3>
-        <p>Elegant outfits designed for weddings, birthdays, parties and other important occasions.</p>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="about-container">
 
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="section-inner contact-grid">
-    <div class="contact-copy">
-      <p class="eyebrow">Get In Touch</p>
-      <h2>Contact NEZ TAILORING</h2>
-      <p>Ready to create your next amazing outfit? Get in touch with us today.</p>
+            <div class="lawyer-photo">
 
-      <div class="contact-links">
-        <a href="tel:09072166208" class="contact-link">
-          <span aria-hidden="true">&#9742;</span> Call Us — 09072166208
-        </a>
-        <a href="mailto:gabriellaogunfowodu@gmail.com" class="contact-link">
-          <span aria-hidden="true">&#9993;</span> Email Us
-        </a>
-      </div>
-    </div>
+                <!-- YOUR UPLOADED IMAGE -->
+                <img src="lawyer.jpg" alt="Rebecca - Criminal Defense Lawyer">
 
-    <form class="contact-form" action="#" method="post">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required>
+                <div class="photo-label">
+                    <h3>Rebecca</h3>
+                    <p>Criminal Defense Attorney</p>
+                </div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
 
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+            <div class="about-text">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Tell us about the outfit you have in mind..." required></textarea>
+                <h3>A Strong Voice For Your Defense</h3>
 
-      <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-    </form>
-  </div>
-</section>
+                <p>
+                    Rebecca is a dedicated criminal defense lawyer who
+                    approaches every case with careful preparation,
+                    strategic thinking and professional determination.
+                </p>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="section-inner footer-grid">
-    <div class="footer-brand">
-      <span class="brand-name light">NEZ<em>TAILORING</em></span>
-      <p>Premium fashion. Perfect fit. Customer satisfaction.</p>
-    </div>
+                <p>
+                    Her work involves carefully examining the facts of
+                    each case, reviewing evidence, researching applicable
+                    law and preparing effective legal strategies.
+                </p>
 
-    <nav class="footer-nav">
-      <a href="#top">Home</a>
-      <span aria-hidden="true">|</span>
-      <a href="#about">About</a>
-      <span aria-hidden="true">|</span>
-      <a href="#gallery">Gallery</a>
-      <span aria-hidden="true">|</span>
-      <a href="#why-us">Why Us</a>
-      <span aria-hidden="true">|</span>
-      <a href="#contact">Contact</a>
-    </nav>
+                <p>
+                    Rebecca believes that every client deserves to be
+                    heard and represented with professionalism, respect
+                    and confidentiality.
+                </p>
 
-    <div class="footer-contact">
-      <p>09072166208</p>
-      <p>gabriellaogunfowodu@gmail.com</p>
-    </div>
-  </div>
-  <p class="footer-copy">&copy; 2026 NEZ TAILORING. All Rights Reserved.</p>
-</footer>
+                <div class="quote">
+                    "Every case deserves careful attention, strong
+                    preparation and a determined legal advocate."
+                </div>
 
-<script>
-  // Hamburger menu toggle
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('main-nav');
-  hamburger.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-  });
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', false);
-    });
-  });
+            </div>
 
-  // Header shadow on scroll
-  const header = document.querySelector('.site-header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 10);
-  });
+        </div>
+    </section>
 
-  // Scroll-reveal for sections
-  const revealEls = document.querySelectorAll('.about-grid, .gallery-grid, .cards-grid, .patronize-grid, .services-grid, .contact-grid');
-  revealEls.forEach(el => el.classList.add('reveal-on-scroll'));
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => observer.observe(el));
 
-  // Contact form — front-end only demo submission
-  const form = document.querySelector('.contact-form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button');
-    const original = btn.textContent;
-    btn.textContent = 'Message Sent ✓';
-    form.reset();
-    setTimeout(() => { btn.textContent = original; }, 2600);
-  });
-</script>
+    <!-- SERVICES -->
+    <section class="services" id="services">
+
+        <div class="section-title">
+            <h2>Our <span>Services</span></h2>
+
+            <p>
+                We provide great service to every client through
+                dedication, professionalism and strong legal advocacy.
+            </p>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <div class="service-icon">⚖</div>
+                <h3>Criminal Defense</h3>
+                <p>
+                    Professional legal representation and guidance
+                    for individuals facing criminal allegations.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏛</div>
+                <h3>Court Representation</h3>
+                <p>
+                    Strong courtroom advocacy and professional
+                    representation throughout legal proceedings.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>Case Investigation</h3>
+                <p>
+                    Careful examination of evidence, documents and
+                    circumstances surrounding a case.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>Legal Consultation</h3>
+                <p>
+                    Confidential consultations designed to help
+                    clients understand their legal options.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">♟</div>
+                <h3>Legal Strategy</h3>
+                <p>
+                    Thoughtful defense strategies developed around
+                    the specific facts of each case.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚔</div>
+                <h3>Negotiation & Advocacy</h3>
+                <p>
+                    Professional negotiation and determined advocacy
+                    focused on protecting the client's interests.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- WHY US -->
+    <section class="why-us" id="why">
+
+        <div class="section-title">
+            <h2>Why Choose <span>Rebecca?</span></h2>
+            <p>Professional representation with a personal approach.</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-item">
+                <h3>01. Strong Preparation</h3>
+                <p>
+                    Every case receives careful attention and detailed preparation.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>02. Personalized Attention</h3>
+                <p>
+                    We listen carefully and provide clients with clear communication.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>03. Strategic Thinking</h3>
+                <p>
+                    We analyze the circumstances of each case before developing a strategy.
+                </p>
+            </div>
+
+            <div class="why-item">
+                <h3>04. Client Commitment</h3>
+                <p>
+                    We work tirelessly toward the strongest possible outcome for our clients.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Years Experience*</p>
+            </div>
+
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Cases Handled*</p>
+            </div>
+
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Client Support*</p>
+            </div>
+
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Client Commitment</p>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;color:#777;font-size:12px;margin-top:20px;">
+            *Replace example statistics with verified figures before publishing.
+        </p>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+
+        <div class="section-title">
+            <h2>Case <span>Experience</span></h2>
+            <p>Representative areas of criminal defense experience.</p>
+        </div>
+
+        <div class="case-grid">
+
+            <div class="case">
+                <h3>Criminal Defense</h3>
+                <p>
+                    Strategic representation and legal guidance
+                    throughout criminal proceedings.
+                </p>
+            </div>
+
+            <div class="case">
+                <h3>Fraud Allegations</h3>
+                <p>
+                    Careful review of financial evidence and
+                    development of appropriate legal strategies.
+                </p>
+            </div>
+
+            <div class="case">
+                <h3>Theft Allegations</h3>
+                <p>
+                    Dedicated representation focused on protecting
+                    the rights of individuals facing allegations.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            <h2>Contact <span>Rebecca</span></h2>
+            <p>Let's discuss your legal concerns.</p>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Get In Touch</h3>
+
+                <p>
+                    Contact Rebecca & Co. Industries for a confidential
+                    consultation and professional legal guidance.
+                </p>
+
+                <div class="contact-card">
+                    <strong>Email</strong>
+                    <a href="mailto:gabriellaogunfowodu@gmail.com">
+                        gabriellaogunfowodu@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <strong>Phone</strong>
+                    <a href="tel:09072166208">
+                        09072166208
+                    </a>
+                </div>
+
+            </div>
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                >
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                >
+
+                <textarea
+                    placeholder="Tell us briefly about your legal concern..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn gold-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>Rebecca & Co. Industries</h2>
+
+        <p>
+            Criminal Defense • Legal Advocacy • Professional Representation
+        </p>
+
+        <p class="disclaimer">
+            Legal Disclaimer: The information on this website is provided
+            for general informational purposes only and does not constitute
+            legal advice or create an attorney-client relationship.
+        </p>
+
+        <p>
+            © 2026 Rebecca & Co. Industries. All Rights Reserved.
+        </p>
+
+    </footer>
+
 </body>
-</html>
+  </html> 
